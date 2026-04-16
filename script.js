@@ -62,14 +62,32 @@ updateTime();
 // -------- STATUS --------
 function updateStatus(value) {
   status.textContent = value;
-  status.className = `status ${value === "Done" ? "done" : value === "In Progress" ? "progress" : "pending"}`;
+  status.className = `status ${
+    value === "Done" ? "done" :
+    value === "In Progress" ? "progress" :
+    "pending"
+  }`;
 
   if (value === "Done") {
     checkbox.checked = true;
     title.classList.add("completed");
+
+    // ✅ FIX HERE
+    dueDateText.textContent = "Completed";
+    dueDateText.style.color = "#22c55e";
+
+    timeEl.textContent = "";
+    overdueEl.textContent = "";
+
   } else {
     checkbox.checked = false;
     title.classList.remove("completed");
+
+    // restore due date
+    dueDateText.textContent = "Due " + dueDate.toLocaleDateString();
+    dueDateText.style.color = "";
+
+    updateTime();
   }
 
   statusControl.value = value;

@@ -1,50 +1,76 @@
-# Todo Card – HNG Stage 0
+# Todo Card – Stage 1
 
-This project is a responsive and accessible Todo Card built with vanilla HTML, CSS, and JavaScript. It was created as part of the HNG Internship Stage 0 frontend task.
+## Overview
 
-## Live Demo
+This project is a single Todo Card component built with HTML, CSS, and JavaScript. It extends the Stage 0 version by adding interactivity, state management, and improved accessibility.
 
-https://todo-component.vercel.app/
+The component simulates a real-world task card with editing, status updates, priority handling, and dynamic time tracking.
 
-## GitHub Repository
-
-https://github.com/DanielUtodio/todo-component
 ## Features
 
-- Semantic HTML structure using article, time, button, and list elements
-- Accessible checkbox with proper labeling
-- Dynamic time remaining calculation (updates every 60 seconds)
-- Status updates based on task completion
-- Visual feedback using color-coded states (priority, status, overdue)
-- Responsive design across mobile and desktop screen sizes
-- Keyboard accessible interactions
+### Editable Content
 
-## Data Test IDs
+* Edit title, description, priority, and due date
+* Save updates the card
+* Cancel restores previous state
 
-All required `data-testid` attributes are implemented for automated testing:
+### Status Management
 
-- test-todo-card
-- test-todo-title
-- test-todo-description
-- test-todo-priority
-- test-todo-due-date
-- test-todo-time-remaining
-- test-todo-status
-- test-todo-complete-toggle
-- test-todo-tags
-- test-todo-tag-work
-- test-todo-tag-urgent
-- test-todo-edit-button
-- test-todo-delete-button
+* Status options: Pending, In Progress, Done
+* Checkbox and status dropdown are synchronized
+* Marking as Done:
+
+  * Applies strike-through to title
+  * Stops time updates
+  * Replaces due date with "Completed"
+
+### Priority Indicator
+
+* Priority levels: Low, Medium, High
+* Visual feedback using background color changes
+
+### Expand / Collapse
+
+* Description is collapsible
+* Accessible toggle using aria-expanded and aria-controls
+
+### Time Management
+
+* Displays:
+
+  * Due in days, hours, or minutes
+  * Overdue states
+* Updates every 60 seconds
+* Shows "Completed" when task is done
+
+### Accessibility
+
+* All inputs have associated labels
+* aria-live used for time updates
+* Expand/collapse is keyboard accessible
+* Logical tab flow maintained
+
+### Responsiveness
+
+* Works across mobile, tablet, and desktop
+* Layout adapts without breaking on long content
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
+* HTML
+* CSS
+* JavaScript (Vanilla)
 
-## Setup Instructions
+## Live Demo
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/DanielUtodio/todo-component.git
+Deployed on Vercel:
+https://todo-component.vercel.app/
+
+## Repository
+
+GitHub repository:
+https://github.com/DanielUtodio/todo-component
+
+## Notes
+
+This project focuses on building a single, well-structured component rather than a full application. Emphasis was placed on clean state management, accessibility, and meeting all specified behavioral requirements.
